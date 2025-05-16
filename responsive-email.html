@@ -2,81 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Weekly Deal Email</title>
   <style>
-    @media only screen and (max-width: 600px) {
-      .column {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-      }
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      table {
-        width: 100%;
-      }
-      .button {
-        display: inline-block;
-        padding: 10px;
-        width: 100%;
-        text-align: center;
-      }
-      .button:hover {
-        background-color: grey;
-      }
-      td {
-        padding: 15px;
-      }
-      p a {
-        text-decoration: underline;
-        color: grey;
-        font-size: 14px;
-      }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Calibri, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
     }
-    h1, p, h2 {
-      font-family: 'Calibri', 'sans-serif'; 
+
+    h1, h2, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    table.wrapper {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      border: 2px solid #000;
+    }
+
+    .header {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .header p {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .product img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    .product-details {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .product-details h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .product-details p {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .button {
+      display: inline-block;
+      width: 150px;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 4px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: grey;
+      padding: 10px 15px;
+    }
+
+    .footer a {
+      color: grey;
+      text-decoration: underline;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .product {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-details {
+        text-align: left;
+        width: 100%;
+      }
+
+      .button {
+        width: 50% !important;
+        margin: 10px 0 0 0;
+      }
+
+      .footer {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <table style="max-width: 600px; border: 2px solid black;" cellspacing="0" cellpadding="0" align="center">
-    <tr align="center" style="background: black; color: white;">
-      <td align="center">
-        <p style="font-size: 35px; font-weight: bold; margin: 0; padding:3px;">Weekly Deal From XYZ</p>
+  <table class="wrapper" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td class="header">
+        <p>Weekly Deal From XYZ</p>
       </td>
     </tr>
-    <tr align="center">
+    <tr class="hero">
       <td>
-        <img style = "height: 300px; width: 100%;" src="https://img.freepik.com/premium-photo/two-people-wearing-headphones-desk_280538-9255.jpg" alt="Two people with headphones" align="center" />
+        <img src="https://img.freepik.com/premium-photo/two-people-wearing-headphones-desk_280538-9255.jpg" alt="Two people wearing headphones at a desk">
       </td>
     </tr>
     <tr>
-      <td>
-        <table align="center" width="100%">
-          <tr align="center">
-            <td class="column">
-              <img alt="Product image" src="https://www.jbhifi.com.au/cdn/shop/products/640447-Product-0-I-638259205209284466_1024x1024.jpg" style="width:30%; height: auto;" />
-            </td>
-            <td class="column" width="50%" style="padding-left:10px">
-              <h2>Product Name</h2>
-              <p>Short description</p>
-              <a href="#" class="button" style="background-color:black; color:white; text-decoration:none; padding: 10px; display:inline-block;">Shop Now</a>
-            </td>
-          </tr>
-        </table>
+      <td class="content">
+        <div class="product">
+          <img src="https://www.jbhifi.com.au/cdn/shop/products/640447-Product-0-I-638259205209284466_1024x1024.jpg" alt="Wireless headphones product image">
+          <div class="product-details">
+            <h2>Wireless Headphones</h2>
+            <p>Top-quality wireless headphones with noise-canceling features, crystal-clear audio, and all-day battery life.</p>
+            <a href="#" class="button">Shop Now</a>
+          </div>
+        </div>
       </td>
     </tr>
-    <tr align="center">
-      <td style="padding-bottom:10px">
-        <p style="color:grey; text-underline-offset: 2px; padding: 4px;">
-          Click <a style="letter-spacing: .3px; color: grey; text-decoration: underline;" href="example.com">here</a> to unsubscribe.
-        </p>
+    <tr>
+      <td class="footer">
+        <p><a href="https://example.com/unsubscribe">Click here to unsubscribe</a></p>
       </td>
     </tr>
   </table>
